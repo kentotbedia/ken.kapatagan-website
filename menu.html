@@ -14,10 +14,10 @@
     body {
       font-family: 'Arial', sans-serif;
       overflow-x: hidden;
-      background-image: url(municipality.jpg); 	
+      background-image: url(falls.avif);
       background-size: cover;
       background-position: center;
-      background-attachment: fixed; 	
+      background-attachment: fixed;
     }
 
     .hover-zone {
@@ -131,13 +131,16 @@
     }
 
     .main-content {
-      position: absolute;
-      top: 0;
-      right: 0;
-      padding: 20px;
-      text-align: right;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
       color: white;
       z-index: 1;
+      padding: 0 20px;
+      position: relative;
     }
 
     .main-content h2 {
@@ -145,14 +148,14 @@
       font-size: 24px;
     }
 
+    
     .main-content h1 {
-      color: black; 
       font-size: 48px;
       margin: 10px 0;
+      color: #d8d2d2;
     }
 
     .main-content p {
-      color: #00aaff; 
       max-width: 600px;
       color: #ddd;
     }
