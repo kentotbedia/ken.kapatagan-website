@@ -1,0 +1,31 @@
+<!-- Save as cultural-property.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cultural Property</title>
+  <style>
+    body {
+      background: url('bg-cultural.jpg') no-repeat center center/cover;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+      color: white;
+    }
+    /* same CSS... */
+  </style>
+</head>
+<body>
+<div class="hover-zone"></div>
+<div class="side-menu">
+  <!-- same menu -->
+</div>
+<div class="main-content">
+  <h1>🏛️ Cultural Property</h1>
+  <p>
+    Discover the historical and cultural treasures of Kapatagan that highlight our rich heritage.
+  </p>
+</div>
+<script>
+  // logout script
+</script>
+</body>
+</html>

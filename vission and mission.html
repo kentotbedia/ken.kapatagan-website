@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vision and Mission | KAPATAGAN</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url(background.png) no-repeat center center/cover;
+      overflow-x: hidden;
+      color: white;
+    }
+
+    .hover-zone {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 100vh;
+      z-index: 4;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px 20px;
+      transition: left 0.4s ease;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .hover-zone:hover + .side-menu,
+    .side-menu:hover {
+      left: 0;
+    }
+
+    .side-menu .logo-section {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .side-menu .logo-section img {
+      height: 60px;
+      margin-right: 10px;
+    }
+
+    .side-menu .logo-text {
+      color: white;
+      font-size: 14px;
+      line-height: 1.4;
+    }
+
+    .side-menu ul {
+      list-style: none;
+    }
+
+    .side-menu ul li {
+      margin-bottom: 15px;
+    }
+
+    .side-menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-menu ul li a:hover {
+      color: #00aaff;
+      transform: scale(1.05);
+    }
+
+    .side-menu #logoutBtn {
+      align-self: center;
+      color: white;
+      background: #070a0c62;
+      padding: 10px 20px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 18px;
+      width: 150px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .side-menu #logoutBtn:hover {
+      background: #03855a80;
+    }
+
+    .main-content {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      z-index: 1;
+      padding: 40px 20px;
+    }
+
+    .image-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    .image-stack img {
+      width: 100%;
+      height: auto;
+      max-height: 90vh;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .image-stack {
+        max-width: 95%;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="hover-zone"></div>
+
+<div class="side-menu">
+  <div class="top-content">
+    <div class="logo-section">
+      <img src="logo.png" alt="Logo" />
+      <div class="logo-text">
+        <p>Municipality of</p>
+        <p>Kapatagan</p>
+      </div>
+    </div>
+    <ul>
+      <li><a href="menu.html">🏠 Home</a></li>
+      <li><a href="about.html">ℹ️ About</a></li>
+      <li><a href="vission and mission.html">🎯 Vision and Mission</a></li>
+      <li><a href="municipal.html">👥 Municipal Official</a></li>
+      <li><a href="national.html">🏢 National Line Agencies</a></li>
+      <li><a href="barangay directory.html">🏘️ Barangay Directory</a></li>
+      <li><a href="cultural.html">🏛️ Cultural Property</a></li>
+      <li><a href="Tourism.html">🌄 Tourism</a></li>
+      <li><a href="contact.html">📞 Contact Us</a></li>
+    </ul>
+    
+  </div>
+  <a href="log-in.html" id="logoutBtn">Log out</a>
+</div>
+
+<img src="logo with municipal" alt="Kapatagan Logo" class="top-logo" />
+
+<div class="main-content">
+  <div class="image-stack">
+    <img src="VISSION.jpg" alt="Vision Image">
+    <img src="MISSION.jpg" alt="Mission Image">
+  </div>
+</div>
+
+<script>
+  const userName = localStorage.getItem("userName") || "User";
+  document.getElementById("logoutBtn").addEventListener("click", function(e) {
+    e.preventDefault();
+    localStorage.removeItem("userName");
+    window.location.href = 'log-in.html';
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects - Municipality of Kapatagan</title>
+  <style>
+    
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        font-family: 'Arial', sans-serif;
+        background: url(durano.jpg) no-repeat center center fixed;
+        background-size: cover;
+        color: #fff;
+        overflow-x: hidden;
+      }
+      
+      .hover-zone {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 30px;
+        height: 100vh;
+        z-index: 4;
+      }
+      
+      .side-menu {
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 30px 20px;
+        transition: left 0.4s ease;
+        z-index: 3;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+      }
+      
+      .hover-zone:hover + .side-menu,
+      .side-menu:hover {
+        left: 0;
+      }
+      
+      .side-menu .logo-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+      
+      .side-menu .logo-section img {
+        height: 60px;
+        margin-right: 10px;
+      }
+      
+      .side-menu .logo-text {
+        color: white;
+        font-size: 12px;
+        line-height: 1.4;
+        flex: 1;
+        text-align: left;
+      }
+      
+      .side-menu .header-label {
+        color: #00aaff;
+        font-weight: bold;
+        font-size: 14px;
+        text-align: right;
+      }
+      
+      .side-menu ul {
+        list-style: none;
+        margin-top: 10px;
+      }
+      
+      .side-menu ul li {
+        margin-bottom: 15px;
+      }
+      
+      .side-menu ul li a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+        font-weight: bold;
+        display: block;
+        transition: 0.3s;
+      }
+      
+      .side-menu ul li a:hover {
+        color: #00aaff;
+        transform: scale(1.05);
+      }
+      
+      .side-menu #logoutBtn {
+        margin-top: auto;
+        align-self: center;
+        color: white;
+        background: #070a0c62;
+        padding: 10px 20px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 18px;
+        width: 150px;
+        transition: 0.3s;
+        text-decoration: none;
+      }
+      
+      .side-menu #logoutBtn:hover {
+        background: #03855a80;
+      }
+      
+      .content-container {
+        padding: 100px 20px 20px 270px;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .info-card {
+        background: rgba(0, 0, 0, 0.6);
+        padding: 30px;
+        border-radius: 15px;
+        max-width: 800px;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+      }
+      
+      .info-card h1 {
+        color: #00aaff;
+        font-size: 32px;
+        margin-bottom: 20px;
+      }
+      
+      .info-card p {
+        line-height: 1.6;
+        font-size: 16px;
+        color: #ddd;
+      }
+      
+      .info-card img {
+        width: 100%;
+        border-radius: 10px;
+        margin-top: 20px;
+      }
+      
+      .contact-form label {
+        display: block;
+        margin: 15px 0 5px;
+        color: #fff;
+      }
+      
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+      }
+      
+      .contact-form button {
+        padding: 10px 20px;
+        background: #00aaff;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      
+      .contact-form button:hover {
+        background: #0077aa;
+      }
+      
+     
+      @media (max-width: 900px) and (min-width: 601px) {
+        .content-container {
+          padding-left: 220px;
+        }
+      }
+      
+      @media (max-width: 600px) {
+        .content-container {
+          padding: 100px 10px 20px 10px;
+        }
+        .side-menu {
+          width: 200px;
+        }
+        .info-card {
+          padding: 20px;
+        }
+        .info-card h1 {
+          font-size: 24px;
+        }
+        .side-menu ul li a {
+          font-size: 16px;
+        }
+      }
+      </style>
+</head>
+<body>
+  <div class="hover-zone"></div>
+
+  <div class="side-menu">
+    <div class="top-content">
+      <div class="logo-section">
+        <img src="logo.png" alt="Logo" />
+        <div class="logo-text">
+          <p>Municipality of</p>
+          <p><strong>Kapatagan</strong></p>
+        </div>
+      </div>
+      <ul>
+        <li><a href="menu.html">🏠 Home</a></li>
+        <li><a href="about.html">ℹ️ About</a></li>
+        <li><a href="projects.html">📂 Projects</a></li>
+        <li><a href="new.html">🆕 New</a></li>
+        <li><a href="contact.html">📞 Contact Us</a></li>
+      </ul>
+    </div>
+    <a href="log-in.html" id="logoutBtn">Log out</a>
+  </div>
+
+  <div class="content-container">
+    <div class="info-card">
+      <h1>Mindanao Civic Center</h1>
+      <p>The Mindanao Civic Center (MCC) located in Tubod, Lanao del Norte, is an important site that acts as a center for sports, events, and community activities. Covering 71 hectares, the facility features a hotel, gym, swimming pool, oval, and multiple sports amenities, establishing it as a central hub for recreational and professional pursuits. The MCC is recognized for organizing significant events, such as motocross races, enhancing Tubod's image as the "Motocross Capital of the Philippines." In addition to sports, the center's adaptable venues host conventions, concerts, and various cultural events, highlighting the area's expanding infrastructure and progress. Featuring contemporary facilities and a diverse array of services, the MCC significantly contributes to the cultural and economic development of Lanao del Norte.</p>
+      <img src="mcc.jpg" alt="Mindanao Civic Center" />
+    </div>
+  </div>
+
+  <script>
+    const userName = localStorage.getItem("userName") || "User";
+    document.getElementById("logoutBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      localStorage.removeItem("userName");
+      window.location.href = 'log-in.html';
+    });
+  </script>
+</body>
+</html>

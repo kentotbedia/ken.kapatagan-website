@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login | KAPATAGAN</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url(municipality.jpg) no-repeat center center fixed;
+      background-size: cover;
+      height: 100vh;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: -1;
+    }
+
+    .container {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25),
+                  0 10px 10px rgba(0,0,0,0.22);
+      position: relative;
+      overflow: hidden;
+      width: 768px;
+      max-width: 100%;
+      min-height: 480px;
+      margin: 60px auto;
+    }
+
+    .form-container {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      transition: all 0.6s ease-in-out;
+    }
+
+    .sign-in-container {
+      left: 0;
+      width: 50%;
+      z-index: 2;
+    }
+
+    .container.right-panel-active .sign-in-container {
+      transform: translateX(100%);
+    }
+
+    .sign-up-container {
+      left: 0;
+      width: 50%;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    .container.right-panel-active .sign-up-container {
+      transform: translateX(100%);
+      opacity: 1;
+      z-index: 5;
+      animation: show 0.6s;
+    }
+
+    @keyframes show {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    form {
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      padding: 0 50px;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .form-logo {
+      width: 80px;
+      margin-bottom: 15px;
+    }
+
+    input {
+      background: #eee;
+      border: none;
+      padding: 12px 15px;
+      margin: 8px 0;
+      width: 100%;
+    }
+
+    button {
+      border: none;
+      padding: 12px 45px;
+      background-color: #000000;
+      color: white;
+      text-transform: uppercase;
+      border-radius: 20px;
+      margin-top: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #333333;
+    }
+
+    .overlay-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      overflow: hidden;
+      transition: transform 0.6s ease-in-out;
+      z-index: 100;
+    }
+
+    .container.right-panel-active .overlay-container {
+      transform: translateX(-100%);
+    }
+
+    .overlay {
+      background: linear-gradient(to right, #000000, #333333);
+      color: #ffffff;
+      position: relative;
+      left: -100%;
+      height: 100%;
+      width: 200%;
+      transform: translateX(0);
+      transition: transform 0.6s ease-in-out;
+    }
+
+    .container.right-panel-active .overlay {
+      transform: translateX(50%);
+    }
+
+    .overlay-panel {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 40px;
+      text-align: center;
+      height: 100%;
+      width: 50%;
+    }
+
+    .overlay-left {
+      transform: translateX(-20%);
+    }
+
+    .container.right-panel-active .overlay-left {
+      transform: translateX(0);
+    }
+
+    .overlay-right {
+      right: 0;
+      transform: translateX(0);
+    }
+
+    .container.right-panel-active .overlay-right {
+      transform: translateX(20%);
+    }
+
+    h1 {
+      font-weight: bold;
+      margin: 0;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 15px 0 20px;
+    }
+
+    a {
+      color: #000000;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <div class="form-container sign-up-container">
+      <form onsubmit="return handleSignUp(event)">
+        <img src="logo.png" class="form-logo" alt="Logo" />
+        <h1>Create Account</h1>
+        <input type="text" id="signupName" placeholder="Name" maxlength="20" required />
+        <input type="email" id="signupEmail" placeholder="Email" required />
+        <input type="password" id="signupPassword" placeholder="Password" maxlength="20" required />
+        <div style="display: flex; justify-content: flex-end; width: 100%; align-items: center; margin: 8px 0;">
+          <label style="font-size: 16px; display: flex; align-items: center;">
+            <i class="fa-solid fa-lock"></i>
+            <input type="checkbox" onclick="togglePassword('signupPassword')" style="margin-left: 5px;">
+          </label>
+        </div>
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+
+    
+    <div class="form-container sign-in-container">
+      <form onsubmit="return handleLogin(event)">
+        <img src="logo.png" class="form-logo" alt="Logo" />
+        <h1>Log In</h1>
+        <input type="email" id="loginEmail" placeholder="Email" required />
+        <input type="password" id="loginPassword" placeholder="Password" maxlength="20" required />
+        <div style="display: flex; justify-content: space-between; width: 100%; align-items: center; margin: 8px 0;">
+          <a href="#" onclick="forgotPassword()" style="font-size: 12px;">Forgot your password?</a>
+          <label style="font-size: 16px; display: flex; align-items: center;">
+            <i class="fa-solid fa-lock"></i>
+            <input type="checkbox" onclick="togglePassword('loginPassword')" style="margin-left: 5px;">
+          </label>
+        </div>
+        <button type="submit">Log In</button>
+      </form>
+    </div>
+
+    
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Ma'am and Sir</h1>
+          <p>If you are already signed up, you will automatically be returned to log-in.</p>
+          <button class="ghost" onclick="toggleForm()">Log In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Sign up first, Ma'am/Sir.</h1>
+          <p>If you haven't signed up on this Webpage yet, please Sign up.</p>
+          <button class="ghost" onclick="toggleForm()">Sign Up</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const container = document.getElementById('container');
+
+    function toggleForm() {
+      container.classList.toggle("right-panel-active");
+    }
+
+    function handleSignUp(event) {
+      event.preventDefault();
+      const name = document.getElementById("signupName").value;
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPassword", password);
+      localStorage.setItem("userName", name);
+
+      alert("Thank you for sign up Ma'am/Sir, You can now log-in this Webpage.");
+      toggleForm();
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const savedEmail = localStorage.getItem("userEmail");
+      const savedPassword = localStorage.getItem("userPassword");
+
+      if (email === savedEmail && password === savedPassword) {
+        alert("Login successful! Enjoy your Journey Ma'am/Sir..");
+        window.location.href = "menu.html";
+      } else {
+        alert("Login failed. Incorrect email or password.");
+      }
+    }
+
+    function forgotPassword() {
+      const email = prompt("Enter your email to recover password:");
+      const savedEmail = localStorage.getItem("userEmail");
+      const savedPassword = localStorage.getItem("userPassword");
+
+      if (email === savedEmail) {
+        alert("Your password is: " + savedPassword);
+      } else {
+        alert("Email not found.");
+      }
+    }
+
+    function togglePassword(id) {
+      const field = document.getElementById(id);
+      field.type = field.type === "password" ? "text" : "password";
+    }
+  </script>
+</body>
+</html>

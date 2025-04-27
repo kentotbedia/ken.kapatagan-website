@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Kapatagan</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+      padding: 0;
+      height: 100vh;
+    }
+
+    .hover-zone {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 30px;
+      height: 100vh;
+      z-index: 4;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -250px;
+      width: 250px;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 30px 20px;
+      transition: left 0.4s ease;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+
+    .hover-zone:hover + .side-menu,
+    .side-menu:hover {
+      left: 0;
+    }
+
+    .side-menu .top-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .side-menu .logo-section {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin-bottom: 0px;
+      padding-left: 10px;
+    }
+
+    .side-menu .logo-section img {
+      width: 50px;
+      height: auto;
+      margin-right: 0px;
+    }
+
+    .side-menu .logo-text {
+      display: flex;
+      flex-direction: column;
+      margin-left: 5px;
+    }
+
+    .side-menu .logo-text p {
+      color: white;
+      margin: 0;
+      font-size: 14px;
+      text-align: left;
+      line-height: 1.4;
+    }
+
+    .side-menu ul {
+      list-style: none;
+      margin-top: 10px;
+    }
+
+    .side-menu ul li {
+      margin-bottom: 15px;
+    }
+
+    .side-menu ul li a {
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+      transition: 0.3s;
+    }
+
+    .side-menu ul li a:hover {
+      color: #00aaff;
+      transform: scale(1.05);
+    }
+
+    .side-menu #logoutBtn {
+      margin-top: auto;
+      align-self: center;
+      color: white;
+      background: #070a0c62;
+      padding: 10px 20px;
+      text-align: center;
+      border-radius: 5px;
+      font-size: 18px;
+      width: 150px;
+      transition: 0.3s;
+      text-decoration: none;
+    }
+
+    .side-menu #logoutBtn:hover {
+      background: #03855a80;
+    }
+
+    .content-container {
+      padding: 100px 20px 20px 270px;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-direction: column;
+      width: 100%;
+      height: 100vh;
+      box-sizing: border-box;
+    }
+
+    .info-card {
+      width: 100%;
+      max-width: 1000px;
+      font-size: 20px;
+      line-height: 1.6;
+      color: white;
+      text-align: justify;
+      background-color: #00000071;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px auto;
+      border: 5px solid #00aaff; /* GIPADAK-AN ANG BORDER DIRI */
+      max-height: 600px;
+      overflow-y: auto;
+    }
+
+    .info-card h1 {
+      color: #00aaff;
+      font-size: 32px;
+      margin-bottom: 20px;
+    }
+
+    .info-card p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #ddd;
+    }
+
+    .top-image {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .video-container {
+      width: 100%;
+      max-width: 1000px;
+      margin: 20px auto;
+      background-color: #00000071;
+      padding: 10px;
+      border-radius: 10px;
+      border: 1px solid #00aaff;
+    }
+
+    .video-container iframe {
+      width: 100%;
+      height: 400px;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 900px) and (min-width: 601px) {
+      .content-container {
+        padding-left: 220px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .content-container {
+        padding: 100px 10px 20px 10px;
+      }
+      .side-menu {
+        width: 200px;
+      }
+      .info-card {
+        padding: 20px;
+      }
+      .info-card h1 {
+        font-size: 24px;
+      }
+      .side-menu ul li a {
+        font-size: 16px;
+      }
+      .video-container iframe {
+        height: 250px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hover-zone"></div>
+
+  <div class="side-menu">
+    <div class="top-content">
+      <div class="logo-section">
+        <img src="logo.png" alt="Logo" />
+        <div class="logo-text">
+          <p class="municipality-text">Municipality of</p>
+          <p class="municipality-text">Kapatagan</p>
+        </div>
+      </div>
+      <ul>
+        <li><a href="menu.html">🏠 Home</a></li>
+        <li><a href="about.html">ℹ️ About</a></li>
+        <li><a href="vission and mission.html">🎯 Vision and Mission</a></li>
+        <li><a href="municipal.html">👥 Municipal Official</a></li>
+        <li><a href="national.html">🏢 National Line Agencies</a></li>
+        <li><a href="barangay directory.html">🏘️ Barangay Directory</a></li>
+        <li><a href="cultural.html">🏛️ Cultural Property</a></li>
+        <li><a href="Tourism.html">🌄 Tourism</a></li>
+        <li><a href="contact.html">📞 Contact Us</a></li>
+      </ul>
+    </div>
+    <a href="log-in.html" id="logoutBtn">Log out</a>
+  </div>
+  <img src="logo with municipal" alt="Kapatagan Logo" class="top-logo" />
+  <div class="content-container">
+    <div class="info-card">
+
+      <div class="video-container">
+        <iframe src="Johanna.ocharon.mp4" frameborder="0" allowfullscreen></iframe>
+      </div>
+
+      <h1>Kapatagan, Lanao del Norte</h1>
+
+      <p>Kapatagan, officially the Municipality of Kapatagan (Maranao: Inged a Kapatagan; Cebuano: Lungsod sa Kapatagan; Tagalog: Bayan ng Kapatagan), is a 1st class municipality in the province of Lanao del Norte, Philippines. According to the 2020 census, it has a population of 62,571 people.</p>
+
+      <p>The town is famous for its diverse tourist spots such as big rice fields, majestic mountain views, and crystal clear rivers and lakes. Barangay Taguitic and Lapinig are also famous for their crab produce.</p>
+
+      <p>The municipality also boasts its successful sports program in basketball, participating in various semi-pro leagues throughout Mindanao.</p>
+
+      <h2>Etymology</h2>
+      <p>Kapatagan is derived from the Visayan word "patag" meaning plain or valley.</p>
+
+      <h2>Geography</h2>
+      <p>Kapatagan has a total land area of 25,048.41 hectares. It is protected by mountains on its south and east sides and has flat coastal lands and valleys elsewhere.</p>
+
+      <h2>Topography</h2>
+      <p>Major rivers like Maranding, Panoloon, Butadon, Kidalos, and Balili flow to Panguil Bay, often causing floods during the rainy season.</p>
+
+      <h2>Barangays</h2>
+      <p>Kapatagan is subdivided into 33 barangays.</p>
+      
+      <h2>Demographics</h2>
+      <p><strong>Population census of Kapatagan:</strong></p>
+      <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+        <tr style="background-color: #00aaff;">
+          <th>Year</th>
+          <th>Population</th>
+          <th>±% p.a.</th>
+        </tr>
+        <tr><td>1918</td><td>1,825</td><td>—</td></tr>
+        <tr><td>1939</td><td>2,677</td><td>+1.84%</td></tr>
+        <tr><td>1948</td><td>14,103</td><td>+20.28%</td></tr>
+        <tr><td>1960</td><td>32,060</td><td>+7.08%</td></tr>
+        <tr><td>1970</td><td>20,140</td><td>−4.54%</td></tr>
+        <tr><td>1975</td><td>21,055</td><td>+0.90%</td></tr>
+        <tr><td>1980</td><td>25,303</td><td>+3.74%</td></tr>
+        <tr><td>1990</td><td>33,397</td><td>+2.81%</td></tr>
+        <tr><td>1995</td><td>37,006</td><td>+1.94%</td></tr>
+        <tr><td>2000</td><td>42,783</td><td>+3.16%</td></tr>
+        <tr><td>2007</td><td>49,134</td><td>+1.93%</td></tr>
+        <tr><td>2010</td><td>53,916</td><td>+3.44%</td></tr>
+        <tr><td>2015</td><td>62,853</td><td>+2.96%</td></tr>
+        <tr><td>2020</td><td>62,571</td><td>−0.09%</td></tr>
+      </table>
+
+      <h2>Economy</h2>
+      <p>The municipality's economy is boosted by investments from companies like Mercury Drug, Cebuana Lhuillier, and Gaisano Capital Mall.</p>
+
+      <h2>Notable Personalities</h2>
+      <p><strong>Marlon Tapales</strong> – Professional Boxer</p>
+
+    </div>
+  </div>
+  <script>
+    const userName = localStorage.getItem("userName") || "User";
+    document.getElementById("logoutBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      localStorage.removeItem("userName");
+      window.location.href = 'log-in.html';
+    });
+  </script>
+</body>
+</html>
