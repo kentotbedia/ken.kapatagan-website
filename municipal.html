@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Municipal Officials | KAPATAGAN</title>
   <style>
-     * {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -173,14 +173,66 @@
       border: 2px solid #333;
     }
 
+    /* Tablet and below */
+    @media (max-width: 1024px) {
+      .official-card {
+        width: 45%;
+      }
+
+      .description {
+        font-size: 20px;
+      }
+    }
+
+    /* Mobile View */
     @media (max-width: 768px) {
       .official-card {
         width: 90%;
         height: auto;
       }
 
+      .officials-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
       .description {
-        font-size: 20px;
+        font-size: 18px;
+        padding: 15px;
+        margin: 10px;
+      }
+
+      .side-menu {
+        width: 200px;
+        left: -200px;
+      }
+
+      .side-menu .logo-section img {
+        height: 50px;
+      }
+
+      .side-menu ul li a {
+        font-size: 16px;
+      }
+
+      .hover-zone {
+        width: 50px;
+      }
+
+      .hover-zone:hover + .side-menu {
+        left: 0;
+      }
+    }
+
+    /* Very small devices (e.g., old smartphones) */
+    @media (max-width: 480px) {
+      .official-card {
+        width: 100%;
+        margin: 5px auto;
+      }
+
+      .description {
+        font-size: 16px;
       }
     }
   </style>
@@ -207,10 +259,8 @@
         <li><a href="Tourism.html">🌄 Tourism</a></li>
         <li><a href="contact.html">📞 Contact Us</a></li>
       </ul>
-      
-      
     </div>
-    <a href="log-in.html" id="logoutBtn">Log out</a>
+    <a href="index.html" id="logoutBtn">Log out</a>
   </div>
 
   <img src="logo with municipal" alt="Kapatagan Logo" class="top-logo" />
