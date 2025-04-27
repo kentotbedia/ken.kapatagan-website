@@ -112,14 +112,17 @@
     .main-content {
       min-height: 100vh;
       padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     form {
       background: rgba(0, 0, 0, 0.6);
       padding: 50px;
       border-radius: 15px;
-      width: 100vw;
-      max-width: none;
+      width: 100%;
+      max-width: 600px;
       backdrop-filter: blur(5px);
       box-shadow: 0 0 20px rgba(0,0,0,0.6);
     }
@@ -163,6 +166,7 @@
       border-radius: 10px;
       cursor: pointer;
       transition: background 0.3s, transform 0.2s;
+      width: 100%;
     }
 
     form button:hover {
@@ -173,14 +177,34 @@
     .gif-footer {
       margin-top: 50px;
       text-align: center;
+      width: 100%;
     }
 
     .gif-footer img {
-      max-width: 1450px;
-      width: 105%;
+      max-width: 100%;
       height: auto;
       border-radius: none;
       box-shadow: none;
+    }
+
+    @media (max-width: 600px) {
+      form {
+        padding: 30px 20px;
+      }
+
+      form h2 {
+        font-size: 28px;
+      }
+
+      form input, form textarea {
+        font-size: 18px;
+        padding: 15px 20px;
+      }
+
+      form button {
+        font-size: 18px;
+        padding: 15px;
+      }
     }
   </style>
 </head>
@@ -194,7 +218,7 @@
       <img src="logo.png" alt="Logo" />
       <div class="logo-text">
         <p>Municipality of</p>
-        <p><Kapatagan</p>
+        <p>Kapatagan</p> <!-- typo fixed -->
       </div>
     </div>
     <ul>
@@ -209,7 +233,7 @@
       <li><a href="contact.html">📞 Contact Us</a></li>
     </ul>    
   </div>
-  <a href="log-in.html" id="logoutBtn">Log out</a>
+  <a href="index.html" id="logoutBtn">Log out</a>
 </div>
 
 <img src="logo with municipal" alt="Kapatagan Logo" class="top-logo" />
