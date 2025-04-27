@@ -129,12 +129,52 @@
       border-radius: 20px;
       object-fit: cover;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+      max-width: 100%; 
     }
 
-    @media (max-width: 768px) {
+   
+    @media (max-width: 1024px) {
+      .side-menu {
+        width: 200px; 
+      }
+
       .image-stack {
         max-width: 95%;
         gap: 20px;
+      }
+    }
+
+   
+    @media (max-width: 768px) {
+      .side-menu {
+        width: 100%; 
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      .main-content {
+        padding: 20px; 
+      }
+
+      .image-stack {
+        width: 100%; 
+        gap: 10px; 
+      }
+
+      .hover-zone {
+        display: none;
+      }
+    }
+
+    
+    @media (max-width: 480px) {
+      .side-menu {
+        width: 100%;
+      }
+
+      .image-stack img {
+        max-height: 70vh; /* Reduce max height of images on smaller screens */
       }
     }
   </style>
@@ -163,9 +203,8 @@
       <li><a href="Tourism.html">🌄 Tourism</a></li>
       <li><a href="contact.html">📞 Contact Us</a></li>
     </ul>
-    
   </div>
-  <a href="log-in.html" id="logoutBtn">Log out</a>
+  <a href="index.html" id="logoutBtn">Log out</a>
 </div>
 
 <img src="logo with municipal" alt="Kapatagan Logo" class="top-logo" />
