@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tourism</title>
   <style>
     * {
@@ -142,73 +143,111 @@
       border-radius: 20px;
       margin-bottom: 40px;
     }
+
+    /* Tablet */
+    @media screen and (max-width: 768px) {
+      .tourism-section {
+        padding: 30px 5%;
+      }
+
+      .side-menu {
+        width: 200px;
+      }
+
+      .main-header img {
+        width: 100%;
+      }
+    }
+
+    /* Mobile */
+    @media screen and (max-width: 480px) {
+      .tourism-section {
+        padding: 20px 3%;
+      }
+
+      .side-menu {
+        width: 180px;
+      }
+
+      .main-header img {
+        width: 100%;
+      }
+
+      .side-menu ul li a {
+        font-size: 16px;
+      }
+
+      .side-menu #logoutBtn {
+        width: 120px;
+        font-size: 14px;
+      }
+    }
   </style>
 </head>
 <body>
-<div class="hover-zone"></div>
+  <div class="hover-zone"></div>
 
-<div class="side-menu">
-  <div class="top-content">
-    <div class="logo-section">
-      <img src="logo.png" alt="Logo" />
-      <div class="logo-text">
-        <p>Municipality of</p>
-        <p>Kapatagan</p>
+  <div class="side-menu">
+    <div class="top-content">
+      <div class="logo-section">
+        <img src="logo.png" alt="Logo" />
+        <div class="logo-text">
+          <p>Municipality of</p>
+          <p>Kapatagan</p>
+        </div>
       </div>
+      <ul>
+        <li><a href="menu.html">🏠 Home</a></li>
+        <li><a href="about.html">ℹ️ About</a></li>
+        <li><a href="vission and mission.html">🎯 Vision and Mission</a></li>
+        <li><a href="municipal.html">👥 Municipal Official</a></li>
+        <li><a href="national.html">🏢 National Line Agencies</a></li>
+        <li><a href="barangay directory.html">🏘️ Barangay Directory</a></li>
+        <li><a href="cultural.html">🏛️ Cultural Property</a></li>
+        <li><a href="Tourism.html">🌄 Tourism</a></li>
+        <li><a href="contact.html">📞 Contact Us</a></li>
+      </ul>
     </div>
-    <ul>
-      <li><a href="menu.html">🏠 Home</a></li>
-      <li><a href="about.html">ℹ️ About</a></li>
-      <li><a href="vission and mission.html">🎯 Vision and Mission</a></li>
-      <li><a href="municipal.html">👥 Municipal Official</a></li>
-      <li><a href="national.html">🏢 National Line Agencies</a></li>
-      <li><a href="barangay directory.html">🏘️ Barangay Directory</a></li>
-      <li><a href="cultural.html">🏛️ Cultural Property</a></li>
-      <li><a href="Tourism.html">🌄 Tourism</a></li>
-      <li><a href="contact.html">📞 Contact Us</a></li>
-    </ul>
-    
+    <a href="index.html" id="logoutBtn">Log out</a>
   </div>
-  <a href="log-in.html" id="logoutBtn">Log out</a>
-</div>
 
-<div class="main-header">
-  <img src="pool.png" alt="Kapatagan Banner">
-</div>
+  <div class="main-header">
+    <img src="pool.png" alt="Kapatagan Banner">
+  </div>
 
-<div class="tourism-section">
-  <p>
-    Looking for the next destination to visit in the Philippines? If you’re already in the Mindanao region, you should head out to Kapatagan, Lanao del Norte. It is a second-class municipality located in Lanao del Norte, Philippines. The place offers opportunities for you to explore nature's wonders: great natural attractions, adventures, and scenic charms.
-    <br><br>
-    Kapatagan is blessed by mountains on its southern and eastern sides, protecting the town from typhoons. There are valleys, coastal lands, and five major rivers running across the town — plus two beautiful waterfalls! Perfect for trekking and outdoor adventures.
-    <br><br>
-    <strong>Unveiling the Enchanting Beauty of Kapatagan:</strong><br>
-    Kapatagan offers a perfect blend of rice fields stretching to the horizon, majestic mountains, and serene lakes. Travelers seeking breathtaking views, peace, and adventure will surely fall in love with the place.
-  </p>
+  <div class="tourism-section">
+    <p>
+      Looking for the next destination to visit in the Philippines? If you’re already in the Mindanao region, you should head out to Kapatagan, Lanao del Norte. It is a second-class municipality located in Lanao del Norte, Philippines. The place offers opportunities for you to explore nature's wonders: great natural attractions, adventures, and scenic charms.
+      <br><br>
+      Kapatagan is blessed by mountains on its southern and eastern sides, protecting the town from typhoons. There are valleys, coastal lands, and five major rivers running across the town — plus two beautiful waterfalls! Perfect for trekking and outdoor adventures.
+      <br><br>
+      <strong>Unveiling the Enchanting Beauty of Kapatagan:</strong><br>
+      Kapatagan offers a perfect blend of rice fields stretching to the horizon, majestic mountains, and serene lakes. Travelers seeking breathtaking views, peace, and adventure will surely fall in love with the place.
+    </p>
 
-  <img src="cathedrall Falls.jpg" alt="Kapatagan Scenic View">
+    <img src="cathedrall Falls.jpg" alt="Kapatagan Scenic View">
 
-  <p>
-    <strong>A Symphony of Vast Rice Fields:</strong><br>
-    Enchanting lush green rice fields showcase the harmony between people and nature. The soothing wind through the grains will make you feel relaxed and connected to rural life.
-    <br><br>
-    <strong>Majestic Mountain Panoramas:</strong><br>
-    Surrounded by mountains like Durano Mountain View Resort, Kapatagan invites you to hike and marvel at its panoramic vistas. Perfect for adventurers and peace seekers alike.
-    <br><br>
-    <strong>Serene Lake Bliss:</strong><br>
-    La Libertad Lake Adventure is a hidden gem, offering kayaking and peaceful shores to unwind and reconnect with nature’s simple beauty.
-  </p>
+    <p>
+      <strong>A Symphony of Vast Rice Fields:</strong><br>
+      Enchanting lush green rice fields showcase the harmony between people and nature. The soothing wind through the grains will make you feel relaxed and connected to rural life.
+      <br><br>
+      <strong>Majestic Mountain Panoramas:</strong><br>
+      Surrounded by mountains like Durano Mountain View Resort, Kapatagan invites you to hike and marvel at its panoramic vistas. Perfect for adventurers and peace seekers alike.
+      <br><br>
+      <strong>Serene Lake Bliss:</strong><br>
+      La Libertad Lake Adventure is a hidden gem, offering kayaking and peaceful shores to unwind and reconnect with nature’s simple beauty.
+    </p>
 
-  <img src="durano view.jpg" alt="Kapatagan Rice Fields and Mountains">
-</div>
+    <img src="durano view.jpg" alt="Kapatagan Rice Fields and Mountains">
+  </div>
 
-<script>
-  const userName = localStorage.getItem("userName") || "User";
-  document.getElementById("logoutBtn").addEventListener("click", function(e) {
-    e.preventDefault();
-    localStorage.removeItem("userName");
-    window.location.href = 'log-in.html';
-  });
-</script>
+  <script>
+    const userName = localStorage.getItem("userName") || "User";
+    document.getElementById("logoutBtn").addEventListener("click", function(e) {
+      e.preventDefault();
+      localStorage.removeItem("userName");
+      window.location.href = 'log-in.html';
+    });
+  </script>
 </body>
 </html>
