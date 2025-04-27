@@ -134,6 +134,71 @@
       height: 150px; 
       object-fit: contain;
     }
+
+    /* Media Queries for responsiveness */
+    @media (max-width: 1024px) {
+      .side-menu {
+        width: 200px;
+      }
+
+      .side-menu .logo-section img {
+        height: 50px;
+      }
+
+      .main-content h1 {
+        font-size: 36px;
+      }
+
+      .logo-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .side-menu {
+        width: 180px;
+      }
+
+      .main-content h1 {
+        font-size: 28px;
+      }
+
+      .logo-container {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .side-menu ul li a {
+        font-size: 16px;
+      }
+
+      .side-menu #logoutBtn {
+        font-size: 16px;
+        width: 130px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .side-menu {
+        width: 150px;
+      }
+
+      .main-content h1 {
+        font-size: 24px;
+      }
+
+      .logo-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .side-menu ul li a {
+        font-size: 14px;
+      }
+
+      .side-menu #logoutBtn {
+        font-size: 14px;
+        width: 120px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -160,7 +225,7 @@
         </ul>
         
       </div>
-      <a href="log-in.html" id="logoutBtn">Log out</a>
+      <a href="index.html" id="logoutBtn">Log out</a>
 </div>
 <img src="logo with municipal" alt="Kapatagan Logo" class="top-logo" />
 <div class="main-content">
