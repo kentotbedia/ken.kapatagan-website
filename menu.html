@@ -34,11 +34,12 @@
       top: 0;
       left: -250px;
       width: 250px;
+      max-width: 80%;
       height: 100%;
       background: rgba(0, 0, 0, 0.7);
       backdrop-filter: blur(10px);
       padding: 30px 20px;
-      transition: left 0.4s ease;
+      transition: left 0.3s ease;
       z-index: 3;
       display: flex;
       flex-direction: column;
@@ -64,16 +65,12 @@
     .side-menu .logo-section img {
       height: 60px;
       margin-right: 10px;
-      animation: fadeSlideIn 0.5s forwards;
-      animation-delay: 0.2s;
     }
 
     .side-menu .logo-text {
       color: white;
       font-size: 14px;
       line-height: 1.4;
-      animation: fadeSlideIn 0.5s forwards;
-      animation-delay: 0.4s;
     }
 
     .side-menu ul {
@@ -82,22 +79,7 @@
 
     .side-menu ul li {
       margin-bottom: 15px;
-      opacity: 0;
-      transform: translateX(-20px);
     }
-
-    .side-menu:hover ul li {
-      animation: fadeSlideIn 0.5s forwards;
-    }
-
-    .side-menu:hover ul li:nth-child(1) { animation-delay: 0.3s; }
-    .side-menu:hover ul li:nth-child(2) { animation-delay: 0.45s; }
-    .side-menu:hover ul li:nth-child(3) { animation-delay: 0.6s; }
-    .side-menu:hover ul li:nth-child(4) { animation-delay: 0.75s; }
-    .side-menu:hover ul li:nth-child(5) { animation-delay: 0.9s; }
-    .side-menu:hover ul li:nth-child(6) { animation-delay: 1.05s; }
-    .side-menu:hover ul li:nth-child(7) { animation-delay: 1.2s; }
-    .side-menu:hover ul li:nth-child(8) { animation-delay: 1.35s; }
 
     .side-menu ul li a {
       color: white;
@@ -124,6 +106,7 @@
       width: 150px;
       transition: 0.3s;
       text-decoration: none;
+      margin-top: 20px;
     }
 
     .side-menu #logoutBtn:hover {
@@ -131,7 +114,7 @@
     }
 
     .main-content {
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -139,7 +122,7 @@
       text-align: center;
       color: white;
       z-index: 1;
-      padding: 0 20px;
+      padding: 20px;
       position: relative;
     }
 
@@ -148,7 +131,6 @@
       font-size: 24px;
     }
 
-    
     .main-content h1 {
       font-size: 48px;
       margin: 10px 0;
@@ -158,16 +140,63 @@
     .main-content p {
       max-width: 600px;
       color: #ddd;
+      font-size: 18px;
     }
 
-    @keyframes fadeSlideIn {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
+   
+    @media (max-width: 768px) {
+      .side-menu {
+        width: 200px;
       }
-      to {
-        opacity: 1;
-        transform: translateX(0);
+
+      .side-menu .logo-section img {
+        height: 50px;
+      }
+
+      .side-menu .logo-text {
+        font-size: 12px;
+      }
+
+      .side-menu ul li a {
+        font-size: 16px;
+      }
+
+      .main-content h1 {
+        font-size: 36px;
+      }
+
+      .main-content p {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .side-menu {
+        width: 180px;
+      }
+
+      .side-menu .logo-section img {
+        height: 40px;
+      }
+
+      .side-menu .logo-text {
+        font-size: 11px;
+      }
+
+      .side-menu ul li a {
+        font-size: 14px;
+      }
+
+      .main-content h1 {
+        font-size: 28px;
+      }
+
+      .main-content h2 {
+        font-size: 20px;
+      }
+
+      .main-content p {
+        font-size: 14px;
       }
     }
   </style>
@@ -197,7 +226,7 @@
       <li><a href="contact.html">📞 Contact Us</a></li>
     </ul>
   </div>
-  <a href="log-in.html" id="logoutBtn">Log out</a>
+  <a href="index.html" id="logoutBtn">Log out</a>
 </div>
 
 <div class="main-content">
