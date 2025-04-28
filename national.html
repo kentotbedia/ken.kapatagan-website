@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>National Line Agencies</title>
   <style>
-     * {
+    * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -11,11 +13,12 @@
 
     body {
       font-family: 'Arial', sans-serif;
-      background: url(background.png) no-repeat center center/cover;
+      background: url('background.png') no-repeat center center/cover;
       overflow-x: hidden;
       color: white;
     }
 
+    /* Hover zone for opening side menu */
     .hover-zone {
       position: fixed;
       top: 0;
@@ -25,6 +28,7 @@
       z-index: 4;
     }
 
+    /* Side Menu */
     .side-menu {
       position: fixed;
       top: 0;
@@ -41,11 +45,13 @@
       justify-content: space-between;
     }
 
+    /* Side menu visibility on hover */
     .hover-zone:hover + .side-menu,
     .side-menu:hover {
       left: 0;
     }
 
+    /* Logo section in side menu */
     .side-menu .logo-section {
       display: flex;
       align-items: center;
@@ -63,6 +69,7 @@
       line-height: 1.4;
     }
 
+    /* Side menu links */
     .side-menu ul {
       list-style: none;
     }
@@ -85,16 +92,14 @@
       transform: scale(1.05);
     }
 
-
+     
     .main-content {
-      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       text-align: center;
-      z-index: 1;
-      padding: 0 20px;
+      padding: 20px;
     }
 
     .main-content h1 {
@@ -114,19 +119,32 @@
     }
 
     .logo-container img {
-      width: 150px; 
-      height: 150px; 
+      width: 150px;
+      height: 150px;
       object-fit: contain;
     }
 
-    /* Media Queries for responsiveness */
+     
+     
+    @media (max-width: 1200px) {
+      .side-menu {
+        width: 220px;
+      }
+
+      .main-content h1 {
+        font-size: 40px;
+      }
+
+      .logo-container {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      
+    }
+
     @media (max-width: 1024px) {
       .side-menu {
         width: 200px;
-      }
-
-      .side-menu .logo-section img {
-        height: 50px;
       }
 
       .main-content h1 {
@@ -134,7 +152,11 @@
       }
 
       .logo-container {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .top-logo {
+        max-width: 230px;
       }
     }
 
@@ -148,16 +170,15 @@
       }
 
       .logo-container {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .side-menu ul li a {
         font-size: 16px;
       }
 
-      .side-menu #logoutBtn {
-        font-size: 16px;
-        width: 130px;
+      .top-logo {
+        max-width: 200px;
       }
     }
 
@@ -171,45 +192,51 @@
       }
 
       .logo-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
       }
 
       .side-menu ul li a {
         font-size: 14px;
       }
 
-      .side-menu #logoutBtn {
-        font-size: 14px;
-        width: 120px;
+      .top-logo {
+        max-width: 180px;
       }
     }
   </style>
 </head>
 <body>
+
+ 
 <div class="hover-zone"></div>
+
+ 
 <div class="side-menu">
-    <div class="top-content">
-        <div class="logo-section">
-          <img src="logo.png" alt="Logo" />
-          <div class="logo-text">
-            <p>Municipality of</p>
-            <p>Kapatagan</p>
-          </div>
-        </div>
-        <ul>
-          <li><a href="menu.html">🏠 Home</a></li>
-          <li><a href="about.html">ℹ️ About</a></li>
-          <li><a href="vission and mission.html">🎯 Vision and Mission</a></li>
-          <li><a href="municipal.html">👥 Municipal Official</a></li>
-          <li><a href="national.html">🏢 National Line Agencies</a></li>
-          <li><a href="barangay directory.html">🏘️ Barangay Directory</a></li>
-          <li><a href="cultural.html">🏛️ Cultural Property</a></li>
-          <li><a href="Tourism.html">🌄 Tourism</a></li>
-          <li><a href="contact.html">📞 Contact Us</a></li>
-        </ul>
+  <div class="top-content">
+    <div class="logo-section">
+      <img src="logo.png" alt="Logo" />
+      <div class="logo-text">
+        <p>Municipality of</p>
+        <p>Kapatagan</p>
       </div>
     </div>
+    <ul>
+      <li><a href="menu.html">🏠 Home</a></li>
+      <li><a href="about.html">ℹ️ About</a></li>
+      <li><a href="vission and mission.html">🎯 Vision and Mission</a></li>
+      <li><a href="municipal.html">👥 Municipal Official</a></li>
+      <li><a href="national.html">🏢 National Line Agencies</a></li>
+      <li><a href="barangay directory.html">🏘️ Barangay Directory</a></li>
+      <li><a href="cultural.html">🏛️ Cultural Property</a></li>
+      <li><a href="Tourism.html">🌄 Tourism</a></li>
+      <li><a href="contact.html">📞 Contact Us</a></li>
+    </ul>
+  </div>
+</div>
+
+ 
 <img src="logo with municipal" alt="Kapatagan Logo" class="top-logo" />
+
 <div class="main-content">
   <h1>DEPARTMENTS AND OFFICES DIRECTORY</h1>
   <div class="logo-container">
@@ -228,6 +255,7 @@
     <img src="phlpost.png" alt="Department 13">
   </div>
 </div>
+
 <script>
   const userName = localStorage.getItem("userName") || "User";
   document.getElementById("logoutBtn").addEventListener("click", function(e) {
@@ -236,5 +264,6 @@
     window.location.href = 'log-in.html';
   });
 </script>
+
 </body>
 </html>
