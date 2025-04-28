@@ -40,7 +40,6 @@
       z-index: 3;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
     }
 
     .hover-zone:hover + .side-menu,
@@ -67,6 +66,7 @@
 
     .side-menu ul {
       list-style: none;
+      flex-grow: 1;
     }
 
     .side-menu ul li {
@@ -85,11 +85,6 @@
     .side-menu ul li a:hover {
       color: #00aaff;
       transform: scale(1.05);
-    }
-
-
-    .side-menu #logoutBtn:hover {
-      background: #03855a80;
     }
 
     .main-content {
@@ -117,52 +112,32 @@
       border-radius: 20px;
       object-fit: cover;
       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
-      max-width: 100%; 
     }
 
-   
-    @media (max-width: 1024px) {
-      .side-menu {
-        width: 200px; 
-      }
 
+    @media (max-width: 768px) {
       .image-stack {
         max-width: 95%;
         gap: 20px;
       }
-    }
-
-   
-    @media (max-width: 768px) {
       .side-menu {
-        width: 100%; 
-        position: fixed;
-        top: 0;
-        left: 0;
+        width: 200px;
+        padding: 20px 15px;
       }
-
-      .main-content {
-        padding: 20px; 
+      .side-menu ul li a {
+        font-size: 16px;
       }
-
-      .image-stack {
-        width: 100%; 
-        gap: 10px; 
-      }
-
-      .hover-zone {
-        display: none;
+      .side-menu .logo-section img {
+        height: 50px;
       }
     }
 
-    
     @media (max-width: 480px) {
       .side-menu {
-        width: 100%;
+        width: 180px;
       }
-
-      .image-stack img {
-        max-height: 70vh; /* Reduce max height of images on smaller screens */
+      .side-menu ul li a {
+        font-size: 14px;
       }
     }
   </style>
@@ -202,15 +177,59 @@
     <img src="MISSION.jpg" alt="Mission Image">
   </div>
 </div>
+ <script>
+    const container = document.getElementById('container');
 
-<script>
-  const userName = localStorage.getItem("userName") || "User";
-  document.getElementById("logoutBtn").addEventListener("click", function(e) {
-    e.preventDefault();
-    localStorage.removeItem("userName");
-    window.location.href = 'log-in.html';
-  });
-</script>
+    function toggleForm() {
+      container.classList.toggle("right-panel-active");
+    }
 
+    function handleSignUp(event) {
+      event.preventDefault();
+      const name = document.getElementById("signupName").value;
+      const email = document.getElementById("signupEmail").value;
+      const password = document.getElementById("signupPassword").value;
+
+      localStorage.setItem("userEmail", email);
+      localStorage.setItem("userPassword", password);
+      localStorage.setItem("userName", name);
+
+      alert("Thank you for sign up Ma'am/Sir, You can now log-in this Webpage.");
+      toggleForm();
+    }
+
+    function handleLogin(event) {
+      event.preventDefault();
+      const email = document.getElementById("loginEmail").value;
+      const password = document.getElementById("loginPassword").value;
+
+      const savedEmail = localStorage.getItem("userEmail");
+      const savedPassword = localStorage.getItem("userPassword");
+
+      if (email === savedEmail && password === savedPassword) {
+        alert("Login successful! Enjoy your Journey Ma'am/Sir..");
+        window.location.href = "menu.html";
+      } else {
+        alert("Login failed. Incorrect email or password.");
+      }
+    }
+
+    function forgotPassword() {
+      const email = prompt("Enter your email to recover password:");
+      const savedEmail = localStorage.getItem("userEmail");
+      const savedPassword = localStorage.getItem("userPassword");
+
+      if (email === savedEmail) {
+        alert("Your password is: " + savedPassword);
+      } else {
+        alert("Email not found.");
+      }
+    }
+
+    function togglePassword(id) {
+      const field = document.getElementById(id);
+      field.type = field.type === "password" ? "text" : "password";
+    }
+  </script>
 </body>
 </html>
