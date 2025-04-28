@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Kapatagan</title>
   <style>
+   
     * {
       margin: 0;
       padding: 0;
@@ -163,7 +164,6 @@
       border: 1px solid #00aaff;
     }
 
-   
     .video-container img {
       width: 100%;
       height: 400px;
@@ -171,6 +171,7 @@
       border-radius: 10px;
     }
 
+    /* --- Existing Media Queries --- */
     @media (max-width: 900px) and (min-width: 601px) {
       .content-container {
         padding-left: 220px;
@@ -197,8 +198,58 @@
         height: 250px;
       }
     }
+
+    /* --- Additional Responsive Tweaks --- */
+    @media (max-width: 768px) {
+      .side-menu {
+        width: 200px;
+      }
+
+      .content-container {
+        padding: 100px 10px 20px 10px;
+      }
+
+      .info-card {
+        width: 90%;
+      }
+
+      .info-card h1 {
+        font-size: 26px;
+      }
+
+      .info-card p, .info-card h2 {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .side-menu {
+        width: 180px;
+      }
+
+      .info-card h1 {
+        font-size: 22px;
+      }
+
+      .info-card p, .info-card h2 {
+        font-size: 14px;
+      }
+
+      .video-container img {
+        height: 200px;
+      }
+    }
+
+    /* Responsive Table */
+    .info-card table {
+      width: 100%;
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
   </style>
 </head>
+
 <body>
 
   <div class="hover-zone"></div>
@@ -223,9 +274,11 @@
         <li><a href="Tourism.html">🌄 Tourism</a></li>
         <li><a href="contact.html">📞 Contact Us</a></li>
       </ul>
-      </div>
     </div>
+  </div>
+
   <img src="logo with municipal" alt="Kapatagan Logo" class="top-logo" />
+
   <div class="content-container">
     <div class="info-card">
 
@@ -252,9 +305,10 @@
 
       <h2>Barangays</h2>
       <p>Kapatagan is subdivided into 33 barangays.</p>
-      
+
       <h2>Demographics</h2>
       <p><strong>Population census of Kapatagan:</strong></p>
+
       <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
         <tr style="background-color: #00aaff;">
           <th>Year</th>
@@ -285,9 +339,10 @@
 
     </div>
   </div>
+
   <script>
     const userName = localStorage.getItem("userName") || "User";
-    document.getElementById("logoutBtn").addEventListener("click", function(e) {
+    document.getElementById("logoutBtn")?.addEventListener("click", function(e) {
       e.preventDefault();
       localStorage.removeItem("userName");
       window.location.href = 'log-in.html';
